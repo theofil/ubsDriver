@@ -7,12 +7,12 @@ import matplotlib.pyplot as plt
 """
 This script reads your UBS account statement which is previously exported (by you) 
 in CSV format and calculates the monthly expenses as function of time printing out 
-in text and in a time graph the calucalated averages.
+in text and in a time graph the calculated averages.
 """
 
 ### Initialization
 csvFileName = "/tmp/export.csv"   # Put here path+filename to the CSV file
-excludeDebits = ['1170.00']       # Put here any reoccuring debits you don't want to consider, e.g., your rent
+excludeDebits = ['1170.00']       # Put here any reoccurring debits you don't want to consider, e.g., your rent
 fd = ""                           # First day DD.MM.YYYY (leave empty to use default from CSV record)
 ld = "30.07.2017"                 # Last day DD.MM.YYYY (leave empty to use default from CSV record)
 makePlot = True                   # Create a graphic showing expenses as function of time
@@ -44,7 +44,7 @@ print "currency = ", currency
 ### access the CSV file and sum up the expenses 
 totMonths = (lastDay.year - firstDay.year)*12 + lastDay.month - firstDay.month
 print "calculating expenses for a total period of ", (lastDay - firstDay).days, "corresponding to totMonths = ", totMonths
-print "exluded debits = ",excludeDebits
+print "excluded debits = ",excludeDebits
 
 montlySum    = np.zeros(totMonths+1)
 monthYear    = []
